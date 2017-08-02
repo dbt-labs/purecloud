@@ -5,7 +5,7 @@ select
     start_time,
     end_time,
     state,
-    state_id,
+    state_id as presence_state_id,
     type
 
 from {{ var('user_state_table') }}

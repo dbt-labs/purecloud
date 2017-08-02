@@ -5,6 +5,18 @@ with users as (
 
 ),
 
+locations as (
+
+    select * from {{ ref('purecloud_location') }}
+
+),
+
+management_units as (
+
+    select * from {{ ref('purecloud_management_unit') }}
+
+),
+
 user_locations as (
 
     select *,
@@ -49,7 +61,15 @@ user_primary_management_unit as (
 
 )
 
-select *
+select users.*,
+    locations.name as location_name,
+    locations.location_id,
+
+    management_units.name as management_unit_name,
+    management_units.management_unit_id
+
 from users
 join user_primary_location using (user_id)
 join user_primary_management_unit using (user_id)
+join locations using (location_id)
+join management_units using (management_unit_id)

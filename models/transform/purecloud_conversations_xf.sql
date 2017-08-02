@@ -22,7 +22,9 @@ segments as (
 
 )
 
-select *
+select *,
+    datediff('second', segment_start, segment_end) as segment_time_in_seconds
+
 from conversations
 join participants using (conversation_id)
 join sessions using (conversation_id, participant_index)

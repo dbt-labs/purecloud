@@ -11,6 +11,8 @@ profile: dev
 
 models:
   purecloud:
+    base:
+      materialized: ephemeral
     vars:
       # activity_code_table: # schema.activity_code
       # conversation_table: # schema.conversation
@@ -21,28 +23,10 @@ models:
       # location_table: # schema.location
       # mangagement_unit_table: # schema.mangagement_unit
       # management_unit_users_table: # schema.management_unit_users
+      # presence_status_table: # schema.presence_status
       # user_schedule_table: # schema.user_schedule
       # user_schedule__shifts_table: # schema.user_schedule__shifts
       # user_schedule__shifts__activities_table: # schema.user_schedule__shifts__activities
       # user_state_table: # schema.user_state
       # users_table: # schema.users
       # users__locations_table: # schema.users__locations
-
-      activity_code_table: purecloud.activity_code
-      conversation_table: purecloud.conversation
-      conversation_participants_table: purecloud.conversation__participants
-      conversation_participants_sessions_table: purecloud.conversation__participants__sessions
-      conversation_participants_sessions_segments_table: purecloud.conversation__participants__sessions__segments
-      groups_table: purecloud.groups
-      location_table: purecloud.location
-      mangagement_unit_table: purecloud.mangagement_unit
-      management_unit_users_table: purecloud.management_unit_users
-      user_schedule_table: purecloud.user_schedule
-      user_schedule_shifts_table: purecloud.user_schedule__shifts
-      user_schedule_shifts_activities_table: purecloud.user_schedule__shifts__activities
-      user_state_table: purecloud.user_state
-      users_table: purecloud.users
-      users_locations_table: purecloud.users__locations
-
-      #base:
-      #bamaterialized: ephemeral

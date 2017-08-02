@@ -53,7 +53,7 @@ renamed as (
     join shifts using (id)
     join shift_activities using (id)
     join users on users.user_id = schedules.user_id
-    join activity_codes using (management_unit_id, activity_code_id)
+    join activity_codes on users.management_unit_id = activity_codes.management_unit_id and shift_activities.activity_code_id = activity_codes.activity_code_id
 
 )
 
