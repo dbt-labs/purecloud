@@ -7,8 +7,6 @@ target-path: "target"
 clean-targets: ["target"]
 test-paths: ["test"]
 
-profile: dev
-
 models:
   purecloud:
     base:
