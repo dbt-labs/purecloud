@@ -22,6 +22,9 @@ models:
     #   mangagement_unit_table: # schema.mangagement_unit
     #   management_unit_users_table: # schema.management_unit_users
     #   presence_status_table: # schema.presence_status
+    #   queue_table: # schema.queues
+    #   queue_membership_table: # schema.queue_membership
+    #   queue_wrapup_code_table: # schema.queue_wrapup_code
     #   user_schedule_table: # schema.user_schedule
     #   user_schedule__shifts_table: # schema.user_schedule__shifts
     #   user_schedule__shifts__activities_table: # schema.user_schedule__shifts__activities
