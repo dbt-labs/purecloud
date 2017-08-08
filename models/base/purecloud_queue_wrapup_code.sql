@@ -1,6 +1,6 @@
 
 select
-    wrapup_code_id as id,
+    id as wrapup_code_id,
     queue_id,
     name
 
