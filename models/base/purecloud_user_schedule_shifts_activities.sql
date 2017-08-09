@@ -11,8 +11,8 @@ with renamed as (
         counts_as_paid_time,
         description,
         is_dst_fallback,
-        length_in_minutes,
-        start_date as shift_start
+        length_in_minutes::int,
+        start_date::timestamp as shift_start
 
     from {{ var('user_schedule_shifts_activities_table') }}
 

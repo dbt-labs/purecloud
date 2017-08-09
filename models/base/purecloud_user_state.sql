@@ -2,8 +2,8 @@
 select
     id as user_state_id,
     user_id,
-    start_time,
-    end_time,
+    start_time::timestamp,
+    end_time::timestamp,
     state,
     state_id as presence_state_id,
     type

@@ -1,7 +1,7 @@
 
 select
     conversation_id,
-    conversation_end,
-    conversation_start
+    conversation_start::timestamp,
+    conversation_end::timestamp
 
 from {{ var('conversation_table') }}

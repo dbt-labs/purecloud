@@ -17,7 +17,7 @@ select
     monitored_participant_id,
     skip_enabled,
     timeout_seconds,
-    callback_scheduled_time,
+    callback_scheduled_time::timestamp,
     outbound_contact_list_id,
     outbound_contact_id,
     outbound_campaign_id

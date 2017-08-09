@@ -10,8 +10,8 @@ select
     group_id,
     queue_id,
 
-    segment_start,
-    segment_end,
+    segment_start::timestamp,
+    segment_end::timestamp,
     segment_type,
 
     conference,
