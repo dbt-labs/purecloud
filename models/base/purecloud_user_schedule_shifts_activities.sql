@@ -2,6 +2,8 @@
 with renamed as (
 
     select
+        to_char(_sdc_batched_at, 'YYYY-MM-DD HH24:MM:SS') as batched_at,
+        to_char(_sdc_received_at, 'YYYY-MM-DD HH24:MM:SS') as received_at,
         _sdc_level_0_id as shift_index,
         _sdc_level_1_id as shift_activity_index,
         _sdc_source_key_start_date as start_date,
