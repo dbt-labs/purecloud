@@ -37,6 +37,8 @@ renamed as (
         schedules.start_date as date_day,
         schedules.user_id,
 
+        shift_activities.batched_at,
+        shift_activities.received_at,
         shift_activities.description,
         shift_activities.is_dst_fallback,
         shift_activities.shift_start,
