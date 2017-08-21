@@ -19,7 +19,7 @@ models:
     #   conversation__participants__sessions__segments_table: # schema.conversation__participants__sessions__segments
     #   groups_table: # schema.groups
     #   location_table: # schema.location
-    #   mangagement_unit_table: # schema.mangagement_unit
+    #   management_unit_table: # schema.management_unit
     #   management_unit_users_table: # schema.management_unit_users
     #   presence_status_table: # schema.presence_status
     #   queue_table: # schema.queues
