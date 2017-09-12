@@ -22,7 +22,7 @@ user_locations as (
     select *,
         row_number() over (partition by user_id order by location_index) as _dedupe
     from {{ ref('purecloud_users_locations') }}
-    join locations using (location_id)
+    left join locations using (location_id)
 
 ),
 
@@ -32,7 +32,7 @@ management_unit_users as (
         row_number() over (partition by user_id order by management_unit_id) as _dedupe
 
     from {{ ref('purecloud_management_unit_users') }}
-    join management_units using(management_unit_id)
+    left join management_units using(management_unit_id)
 
 ),
 
@@ -71,7 +71,7 @@ select users.*,
     management_units.management_unit_id
 
 from users
-join user_primary_location using (user_id)
-join user_primary_management_unit using (user_id)
-join locations using (location_id)
-join management_units using (management_unit_id)
+left join user_primary_location using (user_id)
+left join user_primary_management_unit using (user_id)
+left join locations using (location_id)
+left join management_units using (management_unit_id)
