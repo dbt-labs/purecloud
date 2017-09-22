@@ -17,6 +17,12 @@ management_units as (
 
 ),
 
+queue_membership as (
+
+    select * from {{ ref('purecloud_queue_membership') }}
+
+),
+
 user_locations as (
 
     select *,
@@ -61,6 +67,18 @@ user_primary_management_unit as (
     from management_unit_users
     where _dedupe = 1
 
+),
+
+-- there shouldn't be dupes here, but make sure that's the case
+user_queue as (
+
+    select distinct
+        user_id,
+        max(queue_id) over (partition by user_id) as queue_id
+
+    from queue_membership
+    where user_id != 'UNKNOWN-USER'
+
 )
 
 select users.*,
@@ -68,10 +86,13 @@ select users.*,
     locations.location_id,
 
     management_units.name as management_unit_name,
-    management_units.management_unit_id
+    management_units.management_unit_id,
+
+    user_queue.queue_id
 
 from users
 left join user_primary_location using (user_id)
 left join user_primary_management_unit using (user_id)
 left join locations using (location_id)
 left join management_units using (management_unit_id)
+left join user_queue using (user_id)
