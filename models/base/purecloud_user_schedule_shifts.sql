@@ -14,7 +14,7 @@ with renamed as (
 
 
 select
-    md5(start_date || user_id) as id,
+    {{ dbt_utils.surrogate_key('start_date', 'user_id') }} as id,
     *
 
 from renamed
